@@ -1,0 +1,6 @@
+framework module Pods_SwiftyInterceptor_Example {
+  umbrella header "Pods-SwiftyInterceptor_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

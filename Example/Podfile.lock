@@ -1,0 +1,16 @@
+PODS:
+  - SwiftyInterceptor (0.1.0)
+
+DEPENDENCIES:
+  - SwiftyInterceptor (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftyInterceptor:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SwiftyInterceptor: 108eee86f9e898a7366e4f2c72fcffcd268ed33d
+
+PODFILE CHECKSUM: 0185a7e6b085bb7bdf63475de81cef925d3e6220
+
+COCOAPODS: 1.12.1

@@ -1,0 +1,18 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'SwiftyInterceptor_Example' do
+  pod 'SwiftyInterceptor', :path => '../'
+
+  target 'SwiftyInterceptor_Tests' do
+    inherit! :search_paths
+    pod 'SwiftyInterceptor', :path => '../'
+  end
+  
+  target 'SwiftyInterceptor_ExampleUITests' do
+    inherit! :search_paths
+    pod 'SwiftyInterceptor', :path => '../'
+  end
+  
+end
