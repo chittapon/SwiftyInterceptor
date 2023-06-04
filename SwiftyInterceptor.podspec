@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SwiftyInterceptor'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of SwiftyInterceptor.'
+  s.summary          = 'Log request/response and mock server for UI testing'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,16 +21,16 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/Chittapon Thongchim/SwiftyInterceptor'
+  s.homepage         = 'https://github.com/chittapon/SwiftyInterceptor'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Chittapon Thongchim' => 'papcoe@gmail.com' }
-  s.source           = { :git => 'https://github.com/Chittapon Thongchim/SwiftyInterceptor.git', :tag => s.version.to_s }
+  s.source           = { http: "#{s.homepage}/releases/download/#{s.version}/Interceptor.zip" }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'SwiftyInterceptor/Sources/**/*'
+  s.source_files = 'Sources/*.{swift,h,m}'
   s.swift_version = "5.0"
   
   # s.resource_bundles = {
