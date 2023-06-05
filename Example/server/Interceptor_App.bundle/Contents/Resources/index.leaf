@@ -1,0 +1,59 @@
+#extend("base"):
+    #export("body"):
+    
+    <div class="container">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand">Interceptor</a>
+                <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        
+        <!-- Spacing -->
+        <div style="height: 10px;"></div>
+
+        <!-- Content -->
+        #for(item in items):
+            
+                <div class="card">
+                <div class="card-header" id="logEntry#(item.id)">
+                <h2 class="mb-0">
+                    <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEntry#(item.id)">
+                    <span><strong>#(item.request.url)</strong></span>
+                    <span>&nbsp;</span>
+                    <span class="badge bg-secondary">#(item.request.method)</span>
+                    </button>
+                </h2>
+                </div>
+                <div id="collapseEntry#(item.id)" class="collapse" aria-labelledby="logEntry#(item.id)" data-parent="#logList">
+                <div class="card-body">
+                    <p><strong>URL</strong></p>
+                    <pre class=px-4>#(item.request.url)</pre>
+                    <p><strong>Headers</strong></p>
+                    <pre class=px-4>#(item.request.headers)</pre>
+                    <p><strong>Body</strong></p>
+                    <pre class=px-4>#(item.request.body)</pre>
+                    <hr>
+                    <p><strong>Status</strong></p>
+                    <pre class=px-4>#(item.response.code)</pre>
+                    <p><strong>Headers</strong></p>
+                    <pre class=px-4>#(item.response.headers)</pre>
+                    <p><strong>Body</strong></p>
+                    <pre class=px-4>#(item.response.body)</pre>
+                </div>
+                </div>
+            </div>
+            
+        #endfor
+        
+        
+        <div id="logList">
+            
+        </div>
+    </div>
+  
+    #endexport
+#endextend

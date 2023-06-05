@@ -36,6 +36,10 @@ func jsonFromFile(name: String) -> String? {
 }
 
 struct MockPost: Mockable {
-    let requestPattern: RequestPattern = .init(method: "GET", url: .init(kind: .path, value: "posts"))
-    let response: Stub = .buildString(url: nil, body: jsonFromFile(name: "response.json"))
+    let requestPattern: RequestPattern = {
+        RequestPattern(method: "GET", url: PatternMatch(kind: .path, value: "posts"))
+    }()
+    let response: Stub = {
+        .buildString(url: nil, body: jsonFromFile(name: "response.json"))
+    }()
 }
